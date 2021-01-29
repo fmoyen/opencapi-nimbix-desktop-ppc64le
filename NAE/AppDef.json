@@ -21,41 +21,6 @@
             "interactive": true,
             "name": "mon bash",
             "description": "Run a batch command using /bin/bash.  The output may be monitored directly in your web browser.",
-            "parameters": {
-                "-l": {
-                    "name": "-l",
-                    "description": "-l",
-                    "type": "CONST",
-                    "value": "-l",
-                    "positional": true,
-                    "required": true
-                },
-                "-c": {
-                    "name": "-c",
-                    "description": "-c",
-                    "type": "CONST",
-                    "value": "-c",
-                    "positional": true,
-                    "required": true
-                },
-                "command": {
-                    "name": "Command",
-                    "description": "Command to run",
-                    "type": "STR",
-                    "positional": true,
-                    "required": true
-                }
-                "-S": {
-                    "name": "Enable SSH",
-                    "description": "Start OpenSSH Daemon",
-                    "type": "BOOL",
-                    "required": true,
-                    "variable": false,
-                    "positional": false,
-                    "value": false
-                },
-
-            }
         }
     },
     "image": {
