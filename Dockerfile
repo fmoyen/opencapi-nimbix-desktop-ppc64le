@@ -7,3 +7,4 @@ ADD helloWorld /usr/bin/
 
 ADD ./NAE/AppDef.json /etc/NAE/AppDef.json
 ADD ./NAE/help.html /etc/NAE/help.html
+ADD ./Images/nimbix-logo.png /usr/lib/JARVICE/tools/nimbix_desktop/share/icons/nimbix-logo.png
