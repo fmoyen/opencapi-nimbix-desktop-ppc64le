@@ -1,8 +1,8 @@
 {
-    "name": "linux",
+    "name": "oc_ppc64le_desktop",
     "description": "Nimbix Jarvice desktop ppc64le environment (Ubuntu) for CAPI / OpenCAPI cards integration tests",
     "author": "fmoyen",
-    "licensed": false,
+    "licensed": true,
     "classifications": [
         "Uncategorized"
     ],
