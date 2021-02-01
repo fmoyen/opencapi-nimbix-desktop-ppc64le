@@ -1,7 +1,7 @@
 FROM fmoyen/ubuntu-nimbix-desktop-ppc64le:xenial
 
 RUN apt-get update && apt-get -y install apt-utils
-RUN apt-get -y install xterm
+RUN apt-get -y install xterm iputils-ping
 
 ADD helloWorld /usr/bin/
 
