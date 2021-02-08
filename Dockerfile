@@ -6,7 +6,7 @@ RUN apt -y autoremove
 RUN apt -y install apt-utils
 RUN apt -y install xterm iputils-ping pciutils
 
-#RUN apt -y install update-manager-core
+RUN apt -y install update-manager-core
 #RUN do-release-upgrade -f DistUpgradeViewNonInteractive
 
 RUN apt -y install libcxl-dev
@@ -21,5 +21,6 @@ ADD ./Images/nimbix-favicon.png /usr/lib/JARVICE/tools/nimbix_desktop/share/icon
 
 USER nimbix
 WORKDIR /home/nimbix
-RUN git clone https://github.com/open-power/snap
-RUN git clone https://github.com/OpenCAPI/oc-accel.git
+RUN mkdir fabtest
+#RUN git clone https://github.com/open-power/snap
+#RUN git clone https://github.com/OpenCAPI/oc-accel.git
