@@ -6,10 +6,11 @@ RUN apt -y autoremove
 RUN apt -y install apt-utils
 RUN apt -y install xterm iputils-ping pciutils
 
-RUN apt -y install update-manager-core
-RUN do-release-upgrade -f DistUpgradeViewNonInteractive
+#RUN apt -y install update-manager-core
+#RUN do-release-upgrade -f DistUpgradeViewNonInteractive
 
-RUN apt -y install libcxl-dev libocxl-dev
+RUN apt -y install libcxl-dev
+#RUN apt -y install libocxl-dev
 
 ADD helloWorld /usr/bin/
 
