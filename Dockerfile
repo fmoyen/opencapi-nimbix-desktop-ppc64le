@@ -8,10 +8,12 @@ RUN apt -y install xterm iputils-ping pciutils
 
 RUN apt -y install update-manager-core
 RUN do-release-upgrade -f DistUpgradeViewNonInteractive
-RUN do-release-upgrade -d -f DistUpgradeViewNonInteractive
+#RUN do-release-upgrade -d -f DistUpgradeViewNonInteractive
 
 RUN apt -y install libcxl-dev
 RUN apt -y install libocxl-dev
+
+RUN apt -y install iproute2
 
 ADD helloWorld /usr/bin/
 
@@ -22,7 +24,9 @@ ADD ./Images/nimbix-favicon.png /usr/lib/JARVICE/tools/nimbix_desktop/share/icon
 
 WORKDIR /opt
 RUN git clone https://github.com/open-power/snap
+RUN chown -Rh nimbix:nimbix snap
 RUN git clone https://github.com/OpenCAPI/oc-accel.git
+RUN chown -Rh nimbix:nimbix oc-accel
 
 #USER nimbix
 #WORKDIR /home/nimbix
