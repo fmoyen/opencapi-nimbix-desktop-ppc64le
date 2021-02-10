@@ -10,10 +10,14 @@ RUN apt -y install update-manager-core
 RUN do-release-upgrade -f DistUpgradeViewNonInteractive
 #RUN do-release-upgrade -d -f DistUpgradeViewNonInteractive
 
+#ADD loop.bash /tmp/loop.bash
+#RUN /tmp/loop.bash
+#RUN apt install -y tightvncserver
+
 RUN apt -y install libcxl-dev
 RUN apt -y install libocxl-dev
 
-RUN apt -y install iproute2
+RUN apt -y install iproute2 build-essential
 
 ADD helloWorld /usr/bin/
 
@@ -24,9 +28,20 @@ ADD ./Images/nimbix-favicon.png /usr/lib/JARVICE/tools/nimbix_desktop/share/icon
 
 WORKDIR /opt
 RUN git clone https://github.com/open-power/snap
-RUN chown -Rh nimbix:nimbix snap
 RUN git clone https://github.com/OpenCAPI/oc-accel.git
+RUN git clone https://github.com/OpenCAPI/oc-utils.git
+
+WORKDIR /opt/snap
+RUN make software
+WORKDIR /opt/oc-accel
+RUN make software
+WORKDIR /opt/oc-utils
+RUN make install
+
+WORKDIR /opt
+RUN chown -Rh nimbix:nimbix snap
 RUN chown -Rh nimbix:nimbix oc-accel
+RUN chown -Rh nimbix:nimbix oc-utils
 
 #USER nimbix
 #WORKDIR /home/nimbix
